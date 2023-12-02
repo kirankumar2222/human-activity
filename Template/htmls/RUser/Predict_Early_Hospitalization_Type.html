@@ -1,0 +1,168 @@
+{% extends 'RUser/Header.html' %}
+{% block userblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 904px;
+    height: 202px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style4 {color: #FFFF00; font-weight: bold; }
+.style6 {
+	font-size: 24px;
+	color: #FFFF00;
+	font-weight: bold;
+}
+.style9 {font-size: 18px}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+
+                   <form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1 style9">Early Hospitalization Prediction !!! </p>
+                            <hr>
+
+                                {% csrf_token %}
+                                <table width="992" align="center">
+                                  <tr>
+                                    <td height="44" colspan="4" bgcolor="#FF0000"><div align="center" class="style4">ENTER DATASETS DETAILS HERE !!! </div></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter pid</div></td>
+                                    <td><input type="text" name="pid"></td>
+                                    <td bgcolor="#FF0000"><div align="center" class="style4">
+                                      <div align="center">Enter gender</div>
+                                    </div></td>
+                                    <td><select name="gender">
+                                      <option>---Select---</option>
+                                      <option>M</option>
+                                      <option>F</option>
+                                    </select>                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter Age</div></td>
+                                    <td><input type="text" name="age"></td>
+                                    <td bgcolor="#FF0000"><div align="center" class="style4">
+                                      <div align="center">Enter bp</div>
+                                    </div></td>
+                                    <td><input type="text" name="bp"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">
+                                      <div align="center">Enter hb</div>
+                                    </div></td>
+                                    <td><input type="text" name="hb"></td>
+                                    <td bgcolor="#FF0000"><div align="center" class="style4">
+                                      <div align="center">Select Year</div>
+                                    </div></td>
+                                    <td><input type="text" name="Year"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">
+                                      <div align="center">Enter facility_Id</div>
+                                    </div></td>
+                                    <td><input type="text" name="facility_Id"></td>
+                                    <td bgcolor="#FF0000"><div align="center" class="style4">
+                                      <div align="center">Enter facility_Name</div>
+                                    </div></td>
+                                    <td><input type="text" name="facility_Name"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter APR_DRG_Code</div></td>
+                                    <td><input type="text" name="APR_DRG_Code"></td>
+                                    <td bgcolor="#FF0000"><div align="center" class="style4">
+                                      <div align="center">Enter APR_Severity_of_Illness_code</div>
+                                    </div></td>
+                                    <td><input type="text" name="APR_Severity_of_Illness_code"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4"><span class="style2">Enter APR_DRG_Desc</span></div></td>
+                                    <td><input type="text" name="APR_DRG_Desc"></td>
+                                    <td bgcolor="#FF0000"><div align="center" class="style4">
+                                      <div align="center">Enter APR_Severity_of_Illness_Desc</div>
+                                    </div></td>
+                                    <td><input type="text" name="APR_Severity_of_Illness_Desc"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center"><span class="style2 style4">Enter APR_MSC</span></div></td>
+                                    <td><input type="text" name="APR_MSC"></td>
+                                    <td bgcolor="#FF0000"><div align="center" class="style4"><span class="style2">Enter APR_MSD</span></div></td>
+                                    <td><input type="text" name="APR_MSD"></td>
+                                  </tr>
+                                  <tr>
+                                    <td width="289" height="44" bgcolor="#FFFFFF">&nbsp;</td>
+                                    <td width="200"><input name="submit" type="submit" class="style1" value="Predict"></td>
+                                    <td width="340">&nbsp;</td>
+                                    <td width="273">&nbsp;</td>
+                                  </tr>
+                                </table>
+					 </fieldset>
+				  </form>
+
+
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+
+                            <hr>
+                            <div>
+                              <table width="844" height="71" border="0" align="center" >
+                                    <tr><td width="523" bgcolor="#FF0000"><div align="center"><span class="style6">Prediction of Early Hospitalization Prediction</span> :: </div></td>
+
+
+
+                                      <td width="311" bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center"><strong>{{objs}}</strong></div></td>
+                                    </tr>
+                      </table>
+
+
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
